@@ -1,0 +1,13 @@
+{
+  "name": "app_crawler",
+  "version": "1.0.18",
+  "description": "",
+  "main": "index.js",
+  "author": "Luciano Borges",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1"
+  }
+}
