@@ -34,3 +34,11 @@ Este teste tem as seguintes funcionalidades:
 - Pode ser utilizada uma paginação dos resultado usando a variável **page**;
 - Algumas informações sobre a busca podem ser visualizadas no console do Node;
 - E a forma desenvolvida foi pensada em permitir a fácil expansão das informações dos itens de resultado.
+
+## Telas
+
+### Busca da Palavra **Cadeado**
+![Tela de Busca da Palavra Cadeado](/images/app_crawler01.png)
+
+### Console da Busca da Palavra Cadeado
+![Tela Console da Busca da Palavra Cadeado](/images/app_crawler02.png)
