@@ -4,6 +4,7 @@ const bodyParser     =        require("body-parser");
 const axios = require('axios');
 const cheerio = require('cheerio');
 const app = express();
+const PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -56,8 +57,8 @@ app.all('/', (req, res) => {
     }
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-    console.log('@ APP Crawler ['+packages.version+']: listening on port 3000...');
+    console.log('@ APP Crawler ['+packages.version+']: listening on port '+PORT+'...');
     console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 });
