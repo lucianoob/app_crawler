@@ -29,39 +29,27 @@ app.all('/', (req, res) => {
 		.then((response) => {
 			let html = response.data;
 			let $ = cheerio.load(html); 
-			$('.results-item').slice(limit*(page-1),limit*page).each(function(i, elem) {
-				let installments = $(this).find('.item-installments').text().trim().replace('   sem juros', '');
+			$('.ui-search-result__wrapper').slice(limit*(page-1),limit*page).each(function(i, elem) {
+				let price_decimal = $(this).find('.ui-search-price.ui-search-price--size-medium > .ui-search-price__second-line').find('.price-tag-fraction').text().trim();
+				let price_decimal_separator = $(this).find('.ui-search-price.ui-search-price--size-medium > .ui-search-price__second-line').find('.price-tag-decimal-separator').text().trim();
+				let price_cents = $(this).find('.ui-search-price.ui-search-price--size-medium > .ui-search-price__second-line').find('.price-tag-cents').text().trim();
+				let price_symbol = $(this).find('.ui-search-price.ui-search-price--size-medium > .ui-search-price__second-line').find('.price-tag-symbol').text().trim();
+				let installments = $(this).find('.ui-search-item__group__element.ui-search-installments').text().replace(/[sem|juros]/g, '').trimEnd();
+
 				let result = {
-					name: $(this).find('.item__title').text().trim(),
-					price: $(this).find('.item__price > .price__fraction').text().trim()+','+$(this).find('.item__price > .price__decimals').text().trim(),
-					currency: $(this).find('.item__price > .price__symbol').text().trim(),
-					installments: installments.slice(0,installments.length-3)+','+installments.slice(-2),
+					name: $(this).find('.ui-search-item__title').text().trim(),
+					price: price_decimal+price_decimal_separator+price_cents,
+					currency: price_symbol,
+					installments: installments,
 					link: $(this).find('a').attr("href"),
-					image: $(this).find('.item__image').find('img').attr('src')
+					image: $(this).find('.ui-search-result__image').find('img').attr('src')
 				};
 				results.push(result);
 			});
-			let requests = [];
-			results.forEach((result) => {
-				requests.push(axios.get(result.link));
-			});
-			axios.all(requests).then(axios.spread((...responses) => {
-		 		responses.forEach((response, index) => {
-		 			let $$ = cheerio.load(response.data);
-		 			results[index].conditions = $$('.layout-description-wrapper').find('.item-conditions').text().trim();		 			
-		 			results[index].store = $$('.vip-section-seller-info').find('a').attr('href').replace('https://perfil.mercadolivre.com.br/', '').replace('+',' ');		 			
-		 			results[index].store_info = {
-		 				link: $$('.vip-section-seller-info').find('a').attr('href'),
-		 				reputation: $$('.reputation-relevant').find('strong').text().trim(),
-		 			};
-		 		});
-		 		return res.json(results);
-			})).catch(errors => {
-				console.log('[app_crawler] ['+(new Date().toLocaleString('pt-BR'))+'] error', errors);
-			});
+			return res.json(results);
 		})
 		.catch((error) => {
-			console.log('[app_crawler] ['+(new Date().toLocaleString('pt-BR'))+'] error', errors);
+			console.log('[app_crawler] ['+(new Date().toLocaleString('pt-BR'))+'] error', error);
 		});
     } else {
     	return res.json([]);
