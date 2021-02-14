@@ -22,7 +22,7 @@ Os componentes utilizados neste projeto são:
 
 Para instalar basta rodar os comandos abaixo, lembrando que é necessário ter todos os pré-requisitos instalados.
 - npm i
-- node index.js
+- npm start
 - Acesse [http://localhost:8080?search=produto&limit=10&page=1](http://localhost:8080?search=produto&limit=10&page=1)
 
 ## Funcionalidades
