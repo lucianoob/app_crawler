@@ -37,8 +37,8 @@ Este teste tem as seguintes funcionalidades:
 
 ## Telas
 
-### Busca da Palavra **Cadeado**
+### Console da Busca da Palavra Cadeado
 ![Tela de Busca da Palavra Caneco](/images/app_crawler-01.png)
 
-### Console da Busca da Palavra Cadeado
+### Busca da Palavra **Cadeado**
 ![Tela Console da Busca da Palavra Caneco](/images/app_crawler-02.png)
