@@ -35,6 +35,10 @@ Este teste tem as seguintes funcionalidades:
 - Algumas informações sobre a busca podem ser visualizadas no console do Node;
 - E a forma desenvolvida foi pensada em permitir a fácil expansão das informações dos itens de resultado.
 
+### Demonstração
+Acesse um exemplo do app publicado no Google Cloud:
+[https://nodeapps-304813.uk.r.appspot.com/?search=caneco](https://nodeapps-304813.uk.r.appspot.com/?search=caneco)
+
 ## Telas
 
 ### Console da Busca da Palavra Cadeado
