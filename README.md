@@ -41,8 +41,8 @@ Acesse um exemplo do app publicado no Google Cloud:
 
 ## Telas
 
-### Console da Busca da Palavra Cadeado
+### Console da Busca da Palavra Caneco
 ![Tela de Busca da Palavra Caneco](/images/app_crawler-01.png)
 
-### Busca da Palavra **Cadeado**
+### Busca da Palavra **Caneco**
 ![Tela Console da Busca da Palavra Caneco](/images/app_crawler-02.png)
