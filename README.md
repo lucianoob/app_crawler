@@ -37,7 +37,7 @@ Este teste tem as seguintes funcionalidades:
 
 ### Demonstração
 Acesse um exemplo do app publicado no Google Cloud:
-- [https://app-crawler.lucianob.app/?search=caneco](https://app-crawler.lucianob.app/?search=caneco)
+- [https://nodeapps-304813.uk.r.appspot.com/?search=caneco](https://nodeapps-304813.uk.r.appspot.com/?search=caneco)
 
 ## Telas
 
